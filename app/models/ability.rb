@@ -6,6 +6,7 @@ class Ability
     if user.has_role? :admin
         can :manage, :all
         can :create, Developer
+        can :create, Task
     elsif user.has_role? :developer
         can :create, Project
         can :update, Project
