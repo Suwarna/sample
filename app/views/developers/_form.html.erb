@@ -1,0 +1,32 @@
+<%= form_for(developer) do |f| %>
+  <% if developer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(developer.errors.count, "error") %> prohibited this developer from being saved:</h2>
+
+      <ul>
+      <% developer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expertise %>
+    <%= f.text_field :expertise %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
